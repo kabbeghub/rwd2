@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function changeFont(){
+            currentFont = document.getElementById("wrapper").style.fontFamily;
+            console.log(currentFont);
+            if(currentFont == "temp"){
+                document.getElementById("wrapper").style.fontFamily = "Impact,Charcoal,sans-serif";
+            } else {
+                document.getElementById("wrapper").style.fontFamily = "Comic Sans MS, sans-serif";
+            }
+            
+        }
+
+        function toggleDarkMode(){
+
+        }
+
+        function toggleMobileNavBar() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+
+        function closeMobileNavBar(){
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            }
+        }
+        function mouselog(event) {
+            console.log(event.target)
+        }   
+    
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <header class="header">
+            <div class="topnav" id="parent-nav" onmouseover="mouselog(event)" onmouseout="mouselog(event)">
+                <a href="#home" class="active" onClick="closeMobileNavBar()">Renewery</a>
+                <div id="myLinks">
+                    <a href="#gallery">Gallery</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#about">About</a>
+                </div>
+                <a href="javascript:void(0);" class="icon" onclick="toggleMobileNavBar()">
+                    <i class="fa fa-bars menu-text">Menu</i>
+                </a>
+            </div>
+        </header>
+        <main class="main">
+            <div class="first-content">
+                <img class="header-logo" src="resources/logo_thin.png" alt="logo" />
+            </div>
+            <article class="index-information">
+                
+            </article>
+
+        </main>
+        <footer class="footer">www.Renewery.se</footer>  
+    </div>                                                                  
+</body>
+</html>
+
+
+
+
+<style>
+    html, body {
+        height:100%;
+        margin:0;
+    }
+
+    .topnav {
+        overflow: hidden;
+        background-color: rgb(212, 182, 182);
+        position: relative;
+    }
+
+    .topnav #myLinks {
+        display: none;
+    }
+
+    .topnav a {
+        color: white;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 2em;
+        display: block;
+        text-align: center;
+    }
+
+    .topnav a.icon {
+        background: rgb(212, 207, 184);
+        display: block;
+        position: absolute;
+        content: "hi";
+        right: 0;
+        top: 0;
+        height:1.15em;
+        width:2em;
+    }
+
+    .topnav a:hover {
+        background-color: rgb(219, 173, 173);
+        color: rgb(211, 199, 199);
+    }
+
+    .active {
+        background-color: #d6d8c3;
+        color: white;
+        font-size: 3em;
+    }
+
+    .main {
+        width:100%;
+        height:100%;
+    }
+
+    .header-logo{
+        height:8em;
+        padding:2em 0 2em 0;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    .footer{
+        background-color: #d6d8c3;
+        bottom:0;
+        width:100%;
+        position:absolute;
+        height:1.5em;
+        color: rgb(241, 241, 241);
+    }
+</style>
