@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      function changeFont() {
+        currentFont = document.getElementById("wrapper").style.fontFamily;
+        console.log(currentFont);
+        if (currentFont == "temp") {
+          document.getElementById("wrapper").style.fontFamily =
+            "Impact,Charcoal,sans-serif";
+        } else {
+          document.getElementById("wrapper").style.fontFamily =
+            "Comic Sans MS, sans-serif";
+        }
+      }
+
+      function toggleDarkMode() {}
+
+      function toggleMobileNavBar() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+
+      function closeMobileNavBar() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        }
+        window.location.href="index.html";
+      }
+
+      function toggleGallery(){
+        window.location.href="gallery.html";
+      }
+
+      function toggleAbout(){
+        window.location.href="about.html";
+      }
+      function toggleContact(){
+        window.location.href="contact.html";
+      }
+
+      function openSilverWood() {
+        document.getElementById("silverwood").style.display = "block";
+        document.getElementById("gallery-read-more-button").style.display = "none";
+      }
+
+      function closeSilverWood() {
+        document.getElementById("silverwood").style.display = "none";
+        document.getElementById("gallery-read-more-button").style.display = "block";
+      }
+
+      function mouselog(event) {
+        console.log(event.target);
+      }
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div
+          class="topnav"
+          id="parent-nav"
+          onmouseover="mouselog(event)"
+          onmouseout="mouselog(event)"
+        >
+          <a href="#gallery" class="active" onClick="closeMobileNavBar()"
+            >Renewery</a
+          >
+          <div id="myLinks">
+            <a href="#gallery" onclick="toggleGallery()">Gallery</a>
+            <a href="#contact" onclick="toggleContact()">Contact</a>
+            <a href="#about" onclick="toggleAbout()">About</a>
+          </div>
+          <a
+            href="javascript:void(0);"
+            class="icon"
+            onclick="toggleMobileNavBar()"
+          >
+            <i class="fa fa-bars menu-text">Menu</i>
+          </a>
+        </div>
+      </header>
+      <main class="main">
+        <div
+          class="horizontal-menu"
+          id="horizontal-menu"
+          style="width: 100%"
+        >
+          <ul>
+            <li>
+              <a
+                href="#index"
+                id="homelink"
+                class="horizontal-menu-links"
+                onclick="closeMobileNavBar()"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                class="horizontal-menu-links"
+                href="#gallery"
+                onclick="toggleGallery()"
+                >Gallery</a
+              >
+            </li>
+            <li>
+              <a
+                class="horizontal-menu-links"
+                href="#contact"
+                onclick="toggleContact()"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <a
+                class="horizontal-menu-links"
+                href="#about"
+                onclick="toggleAbout()"
+                >About</a
+              >
+            </li>
+          </ul>
+        </div>
+        <hr class="menu-divider" />
+        <div class="text-block">
+            <h1 class="gallery-title">Gallery</h1>
+            <div class="container-gallery">
+                <img class="gallery-img" src="resources/silverwoodCased.png" >
+             <button class="gallery-read-more" id="gallery-read-more-button" onclick="openSilverWood()">Read more</button>
+              <div class="silverWoodCased" id="silverwood">
+                <p class="read-more-paragraph">
+                  This old relic was sent in by a customer. Once a shield pendant on an old broken down chest found in the attic, the thought of throwing it away was too much and the thoughts went everywhere. Once pictures of the old beautiful but tiny chest were sent in, our Lead designer Max got to work and came up with 4 amazing designs. But simplicity can sometimes be perfection and the design ended up being an amulet without a chain.
+                </p>
+                <button class="gallery-close" id="gallery-close-more-button" onclick="closeSilverWood()">Close section</button>
+              </div>
+              <img class="gallery-img" src="resources/pendantjewlry.png" >
+           <button class="gallery-read-more">Read more</button>
+
+           <img class="gallery-img" src="resources/smyck1_big.png" >
+           <button class="gallery-read-more">Read more</button>
+          </div>
+        </div>
+          <footer class="footer" id="footer">
+            <p class="social-media-title">
+              Don't forget to check out our social Media!
+            </p>
+            <div class="row">
+              <div class="column">
+                <a href="https://www.facebook.com">
+                  <img src="resources/fbfall2.png" alt="fb" style="width: 100%" />
+                </a>
+              </div>
+              <div class="column">
+                <a href="https://www.instagram.com">
+                  <img src="resources/igfall.png" alt="ig" style="width: 100%" />
+                </a>
+              </div>
+              <div class="column">
+                <a href="https://www.twitter.com">
+                  <img src="resources/twfall.png" alt="tw" style="width: 100%" />
+                </a>
+              </div>
+            </div>
+            <p class="footer-text-left">www.Renewery.se</p>
+            <p class="footer-text-right">Copyright © 2021 Renewery</p>
+          </footer>
+    </div>
+   
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
+  .wrapper {
+    padding: 0;
+    margin: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  .main {
+    min-width: 100%;
+    min-height: 100%;
+    padding-bottom: 10em;
+  }
+  .header {
+    min-width: 100%;
+    min-height: 100%;
+  }
+  .topnav {
+    background-color: rgb(243, 236, 224);
+    position: relative;
+  }
+  .silverWoodCased{
+    display:none;
+    width:100%;
+  }
+  .topnav #myLinks {
+    display: none;
+  }
+
+  .topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 2em;
+    display: block;
+    text-align: left;
+  }
+
+  .topnav a.icon {
+    display: block;
+    position: absolute;
+    content: "hi";
+    right: 0;
+    top: 0;
+    height: 1.15em;
+    width: 2em;
+  }
+
+  .topnav a:hover {
+    background-color: rgb(236, 226, 204);
+    color: rgb(211, 199, 199);
+  }
+
+  .active {
+    background-color: #d6d8c3;
+    color: white;
+    font-size: 3em;
+  }
+  .gallery-title{
+    border-bottom:1px solid;
+    padding-bottom: 0.5em;
+    display:table;
+    margin:1em auto;
+  }
+  .read-more-paragraph{
+    padding-left:12%;
+    border-color:rgb(243, 236, 224);
+    margin:0;
+    width:100%;
+  }
+  .container-gallery{
+    max-width:80%;
+    max-height:10em;
+    display: inline-block;
+  }
+  .gallery-img{
+    margin-left: 12%;
+    display: block;
+  }
+  .container-left{
+    float:left;
+    min-width: 100%;
+  }
+  .container-right{
+    width:50%;
+    height:100%;
+    float:right;
+    border:solid;
+    border-color:rgb(243, 236, 224);
+    border-width: 6px;
+    border-left:none;
+    text-align: left;
+  }
+  .gallery-read-more {
+    background-color: rgb(243, 236, 224);
+    border: none;
+    padding: 0.5em 1em 0.5em 1em;
+    color: rgb(146, 112, 60);
+    bottom:0;
+    width: 100%;
+    margin-left: 12%;
+    margin-bottom: 2em;
+  }  
+  .gallery-close{
+    background-color: rgb(243, 236, 224);
+    border: none;
+    padding: 0.5em 1em 0.5em 1em;
+    color: rgb(146, 112, 60);
+    bottom:0;
+    width: 100%;
+    margin-left: 12%;
+    margin-bottom: 2em;
+  }
+    .text-block {
+      color: #cfcac6;
+    }
+
+          .row {
+    min-width: 100%;
+    display: inline-block;
+    margin-left: 20%;
+  }
+  .column {
+    float: left;
+    text-align: center;
+    max-width: 15%;
+    padding: 10px;
+    padding-bottom: 1px;
+  }
+  .social-media-title {
+    padding: 0;
+    padding-top: 0.2em;
+    margin: 0;
+    text-align: center;
+    color: rgb(241, 241, 241);
+  }
+  .footer-text-left {
+    margin: 0;
+    padding: 0;
+    padding-top: 0;
+    padding-left: 0.4em;
+    width: 40%;
+    display: inline-block;
+  }
+  .footer-text-right {
+    margin: 0;
+    padding: 0;
+    float: right;
+    display: inline-block;
+  }
+
+  .footer {
+    background-color: #d6d8c3;
+    bottom: 0;
+    width: 100%;
+    color: rgb(241, 241, 241);
+    z-index: 2;
+    position: fixed;
+  }
+  ul{
+      display: none;
+    }
+    .menu-divider{display:none;
+    }
+  @media only screen and (min-height: 750px) {
+    .footer {
+      position: fixed;
+    }
+    .main{
+      padding-bottom: 9em;
+    }
+  } 
+  @media only screen and (min-height: 750px) and (min-width:400px) {
+    .footer {
+      position: fixed;
+    }
+    .main{
+      padding-bottom: 13em;
+    }
+    .read-more-paragraph{
+      padding-left: 14%;
+    }
+  }
+  @media only screen and (min-height: 750px) {
+    .footer {
+      position: fixed;
+    }
+  }
+  @media only screen and (min-height: 750px) and (min-width: 600px) {
+    .text-block h2 {
+      font-size: 2em;
+    }
+    
+    .text-block p {
+      font-size: 1em;
+      padding: 0 7em 2em 7em;
+    }
+    .footer {
+      height: 12em;
+    }
+    .row {
+      margin-left: 24%;
+    }
+  }
+  @media only screen and (min-height: 1025px) {
+    .main {
+      background-image: none;
+      position: absolute;
+      min-height: initial;
+      overflow-x: hidden;
+    }
+    .menu-divider {
+      width: 80%;
+      padding-bottom: 3em;
+      padding-top: 0.5em;
+      border-left: none;
+      border-bottom: none;
+      border-right: none;
+      border-color: beige;
+      overflow-x: hidden;
+    }
+    .text-block img {
+      max-width: 25%;
+    }
+    div {
+      display: block;
+    }
+    .menu-text {
+      display: none;
+    }
+    .active {
+      text-align: center;
+    }
+    .topnav a {
+      text-align: center;
+    }
+    .text-block h2 {
+      display: none;
+    }
+    ul li {
+      display: inline-table;
+      padding-left: 1.5em;
+      padding-right: 2em;
+      overflow-x: hidden;
+    }
+    ul {
+      display: block;
+      text-align: center;
+      font-size: 2em;
+      width: 100%;
+    }
+    .horizontal-menu-links {
+      color: beige;
+      display: block;
+    }
+    .horizontal-menu-links:hover {
+      color: rgb(218, 165, 67);
+    }
+    .footer {
+      width: 100%;
+      height: 13em;
+      overflow-x: hidden;
+    }
+    .row {
+      margin-left: 35%;
+      overflow-x: hidden;
+      
+    }
+    .text-block {
+      padding: 0;
+      margin: 0;
+    }
+    .text-block p {
+      font-size: 1em;
+    }
+  }
+
+  @media only screen and (min-width: 769px) {
+    .main {
+      background-image: none;
+      position: absolute;
+    }
+    .menu-text {
+      display: none;
+    }
+    .active {
+      text-align: center;
+    }
+    .topnav a {
+      text-align: center;
+    }
+    div {
+      display: block;
+    }
+    .text-block h2 {
+      display: none;
+    }
+    .gallery-img{
+      max-width: 100%;
+    }
+    .gallery-title{
+      width:60%;
+      text-align: center;
+    }
+    ul li {
+      display: inline-table;
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+    ul {
+      display: block;
+      text-align: center;
+      font-size: 2em;
+      width: 100%;
+    }
+    .horizontal-menu-links {
+      color: beige;
+      display: block;
+    }
+    .horizontal-menu-links:hover {
+      color: rgb(218, 165, 67);
+    }
+    .text-block {
+      padding: 0;
+      margin: 0;
+    }
+    .text-block p {
+      font-size: 1em;
+    }
+    .row {
+      margin-left: 25%;
+    }
+  }
+  @media only screen and (min-width: 900px) {
+    .row {
+      margin-left: 28%;
+    }
+  }
+  @media only screen and (min-width: 1000px) {
+    .row {
+      margin-left: 30%;
+    }
+  }
+  @media only screen and (min-width: 1100px) {
+    .row {
+      margin-left: 32%;
+    }
+    ul li {
+      display: inline-table;
+      padding-left: 2em;
+      padding-right: 2em;
+    }
+  }
+  @media only screen and (min-width: 1200px) {
+    .row {
+      margin-left: 34%;
+    }
+  }
+  @media only screen and (min-width: 1300px) {
+    .row {
+      margin-left: 35%;
+    }
+  }
+  @media only screen and (min-width: 1400px) {
+    .row {
+      margin-left: 36%;
+    }
+  }
+  @media only screen and (min-width: 1500px) {
+    .row {
+      margin-left: 37%;
+    }
+  }
+  @media only screen and (min-width: 1600px) {
+    .row {
+      margin-left: 38%;
+    }
+  }
+  @media only screen and (min-width: 1700px) {
+    .row {
+      margin-left: 39%;
+    }
+  }
+  @media only screen and (min-width: 1800px) {
+    .row {
+      margin-left: 40%;
+    }
+  }
+  @media only screen and (min-width: 1900px) {
+    .row {
+      margin-left: 42%;
+    }
+  }
+</style>

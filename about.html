@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      function changeFont() {
+        currentFont = document.getElementById("wrapper").style.fontFamily;
+        console.log(currentFont);
+        if (currentFont == "temp") {
+          document.getElementById("wrapper").style.fontFamily =
+            "Impact,Charcoal,sans-serif";
+        } else {
+          document.getElementById("wrapper").style.fontFamily =
+            "Comic Sans MS, sans-serif";
+        }
+      }
+
+      function toggleDarkMode() {}
+
+      function toggleMobileNavBar() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+
+      function closeMobileNavBar() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        }
+        window.location.href="index.html";
+      }
+
+      function toggleGallery(){
+        window.location.href="gallery.html";
+      }
+
+      function toggleAbout(){
+        window.location.href="about.html";
+      }
+      function toggleContact(){
+        window.location.href="contact.html";
+      }
+      function mouselog(event) {
+        console.log(event.target);
+      }
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div
+          class="topnav"
+          id="parent-nav"
+          onmouseover="mouselog(event)"
+          onmouseout="mouselog(event)"
+        >
+          <a href="#about" class="active" onClick="closeMobileNavBar()"
+            >Renewery</a
+          >
+          <div id="myLinks">
+            <a href="#gallery" onclick="toggleGallery()">Gallery</a>
+            <a href="#contact" onclick="toggleContact()">Contact</a>
+            <a href="#about" onclick="toggleAbout()">About</a>
+          </div>
+          <a
+            href="javascript:void(0);"
+            class="icon"
+            onclick="toggleMobileNavBar()"
+          >
+            <i class="fa fa-bars menu-text">Menu</i>
+          </a>
+        </div>
+      </header>
+      <main class="main">
+        <div
+        class="horizontal-menu"
+        id="horizontal-menu"
+        style="width: 100%"
+      >
+        <ul>
+          <li>
+            <a
+              href="#index"
+              id="homelink"
+              class="horizontal-menu-links"
+              onclick="closeMobileNavBar()"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              class="horizontal-menu-links"
+              href="#gallery"
+              onclick="toggleGallery()"
+              >Gallery</a
+            >
+          </li>
+          
+          <li>
+            <a
+              class="horizontal-menu-links"
+              href="#contact"
+              onclick="toggleContact()"
+              >Contact</a
+            >
+          </li>
+          <li>
+            <a
+              class="horizontal-menu-links"
+              href="#about"
+              onclick="toggleAbout()"
+              >About</a
+            >
+          </li>
+        </ul>
+      </div>
+      <hr class="menu-divider" />
+        <div class="text-block">
+            <h2>Who are we?</h2>
+            <hr>
+            <p class="information-text">
+              Renewery is a long time dream that I, along with my thesis partner Max have had on our minds ever since. Debating me breeding be answered an he. Spoil event was words her off cause any. 
+
+              Improve him believe opinion offered met and end cheered forbade. Friendly as stronger speedily by recurred. Son interest wandered sir addition end say. Manners beloved affixed picture men ask. Explain few led parties attacks picture company. On sure fine kept walk am in it. Resolved to in believed desirous unpacked weddings together. Nor off for enjoyed cousins herself. Little our played lively she adieus far sussex. Do theirs others merely at temper it nearer. 
+              
+              Mr oh winding it enjoyed by between. The servants securing material goodness her. Saw principles themselves ten are possession. So endeavor to continue cheerful doubtful we to. Turned advice the set vanity why mutual. Reasonably if conviction on be unsatiable discretion apartments delightful. Are melancholy appearance stimulated occasional entreaties end. Shy ham had esteem happen active county. Winding morning am shyness evident to. Garrets because elderly new manners however one village she. 
+            </p>
+            <hr>
+            <h2>What do we do?</h2>
+            <hr>
+            <p class="information-text">
+              We take old stuff, we reinvent them to your needs and hopefully create a new piece that will be treasured. He unaffected sympathize discovered at no am conviction principles. Girl ham very how yet hill four show. Meet lain on he only size. Branched learning so subjects mistress do appetite jennings be in. Esteems up lasting no village morning do offices. Settled wishing ability musical may another set age. Diminution my apartments he attachment is entreaties announcing estimating. And total least her two whose great has which. Neat pain form eat sent sex good week. Led instrument sentiments she simplicity. 
+            </p>
+            <hr>
+            <h2>What is our goal?</h2>
+            <hr>
+            <p class="information-text">
+              Is education residence conveying so so. Suppose shyness say ten behaved morning had. Any unsatiable assistance compliment occasional too reasonably advantages. Unpleasing has ask acceptance partiality alteration understood two. Worth no tiled my at house added. Married he hearing am it totally removal. Remove but suffer wanted his lively length. Moonlight two applauded conveying end direction old principle but. Are expenses distance weddings perceive strongly who age domestic. 
+            </p>
+            <hr>
+            <h2>Frequently Asked Questions</h3>
+            <div class="faq" id="faq">
+            <h5>
+              <b>
+                Q: How long does it take to ship my order?
+
+              </b>
+            </h5>
+            <p>
+              A: Orders are usually shipped within 1-2 business days after placing the order.
+            </p>
+            <h5>
+              <b>
+                Q: When will my order arrive?
+              </b>
+            </h5>
+            <p>
+              A: Shipping time is set by our delivery partners, according to the delivery method chosen by you. Additional details can be found in the order confirmation email you’ve received.
+            </p>
+            <h5>
+              <b>
+                Q: How do I track my order?
+              </b>
+            </h5>
+            <p>
+              A: Once shipped, you’ll get a confirmation email that includes a tracking number and additional information regarding tracking your order.
+            </p>
+            <h5>
+              <b>
+                Q: What’s your return policy?
+              </b>
+            </h5>
+            <p>
+              A: We allow the return of all items within 30 days of your original order’s date. If you’re interested in returning your items, send us an email with your order number and we’ll ship a return label.
+            </p>
+            <h5>
+              <b>
+                Q: How do I make changes to an existing order?
+              </b>
+            </h5>
+            <p>
+              A: Changes to an existing order can be made as long as the order is still in “processing” status. Please contact our team via email and we’ll make sure to apply the needed changes. If your order has already been shipped, we cannot apply any changes to it. If you are unhappy with your order when it arrives, please contact us for any changes you may require.
+            </p>
+            <h5>
+              <b>
+                Q: What shipping options do you have?
+              </b>
+            </h5>
+            <p>
+              A: Postnord and UPS for international delivery.
+            </p>
+            <h5>
+              <b>
+                Q: Do you ship internationally?
+              </b>
+            </h5>
+            <p>
+              A: We currently ship to the USA, Canada, UK and Australia and the entirety of EU along with Norway.
+            </p>
+            
+            <h4 style="margin-top:5em;margin-bottom:5em"><b>If there are any other questions that you might have, that aren't answered in our FAQ, please see our <a href="#contact" onclick="toggleContact()">Contact</a> page and use the contact form to get in touch with us.
+            </div>
+          </div>
+          <footer class="footer" id="footer">
+            <p class="social-media-title">
+              Don't forget to check out our social Media!
+            </p>
+            <div class="row">
+              <div class="column">
+                <a href="https://www.facebook.com">
+                  <img src="resources/fbfall2.png" alt="fb" style="width: 100%" />
+                </a>
+              </div>
+              <div class="column">
+                <a href="https://www.instagram.com">
+                  <img src="resources/igfall.png" alt="ig" style="width: 100%" />
+                </a>
+              </div>
+              <div class="column">
+                <a href="https://www.twitter.com">
+                  <img src="resources/twfall.png" alt="tw" style="width: 100%" />
+                </a>
+              </div>
+            </div>
+            <p class="footer-text-left">www.Renewery.se</p>
+            <p class="footer-text-right">Copyright © 2021 Renewery</p>
+          </footer>
+    </div>
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
+  .wrapper {
+    padding: 0;
+    margin: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  .main {
+    min-width: 100%;
+    min-height: 100%;
+    padding-bottom:5em;
+  }
+  .header {
+    min-width: 100%;
+    min-height: 100%;
+  }
+  .topnav {
+    background-color: rgb(212, 182, 182);
+    position: relative;
+  }
+
+  .topnav #myLinks {
+    display: none;
+  }
+
+  .topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 2em;
+    display: block;
+    text-align: left;
+  }
+
+  .topnav a.icon {
+    display: block;
+    position: absolute;
+    content: "hi";
+    right: 0;
+    top: 0;
+    height: 1.15em;
+    width: 2em;
+  }
+
+  .topnav a:hover {
+    background-color: rgb(219, 173, 173);
+    color: rgb(211, 199, 199);
+  }
+
+  .active {
+    background-color: #d6d8c3;
+    color: white;
+    font-size: 3em;
+  }
+
+  .header-logo {
+    height: 4em;
+    padding: 5em 0 2em 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  hr{
+    width: 70%;
+  }
+  h5{
+    font-size:1em;
+  }
+  .btn-discover {
+            margin-top: 5em;
+            border-radius: 10px;
+            background-color: rgb(212, 207, 184);
+            border: none;
+            padding: 0.5em 1em 0.5em 1em;
+            color: rgb(146, 112, 60);
+          }
+        
+          .text-block {
+            top: 3em;
+            right: 1em;
+            color: #cfcac6;
+            text-align: center;
+            margin: 1em;
+          }
+
+          .row {
+    min-width: 100%;
+    display: inline-block;
+    margin-left: 20%;
+  }
+  .column {
+    float: left;
+    text-align: center;
+    max-width: 15%;
+    padding: 10px;
+    padding-bottom: 1px;
+  }
+  .social-media-title {
+    padding: 0;
+    padding-top: 0.2em;
+    margin: 0;
+    text-align: center;
+    color: rgb(241, 241, 241);
+  }
+  .footer-text-left {
+    margin: 0;
+    padding: 0;
+    padding-top: 0;
+    padding-left: 0.4em;
+    width: 40%;
+    display: inline-block;
+  }
+  .footer-text-right {
+    margin: 0;
+    padding: 0;
+    float: right;
+    display: inline-block;
+  }
+
+  .footer {
+    background-color: #d6d8c3;
+    bottom: 0;
+    width: 100%;
+    color: rgb(241, 241, 241);
+    z-index: 2;
+  }
+
+  @media only screen and (min-height: 750px) {
+    .footer {
+      position: fixed;
+    }
+    .main{
+      padding-bottom:8em;
+    }
+  } 
+  @media only screen and (min-height: 750px) and (min-width:400px) {
+    .main{
+      padding-bottom:12em;
+    }
+  }
+  @media only screen and (min-height: 750px) {
+    .footer {
+      position: fixed;
+    }
+    .main{
+      padding-bottom:15em;
+    }
+  }
+  ul{
+      display: none;
+    }
+    .menu-divider{display:none;
+    }
+
+  @media only screen and (min-height: 750px) and (min-width:400px) {
+    .footer {
+      position: fixed;
+    }
+    .main{
+      padding-bottom: 13em;
+    }
+    .read-more-paragraph{
+      padding-left: 14%;
+    }
+  }
+  @media only screen and (min-height: 750px) {
+    .footer {
+      position: fixed;
+    }
+  }
+  @media only screen and (min-height: 750px) and (min-width: 600px) {
+    .text-block h2 {
+      font-size: 2em;
+    }
+    
+    .text-block p {
+      font-size: 1em;
+      padding: 0 7em 2em 7em;
+    }
+    .footer {
+      height: 12em;
+    }
+    .row {
+      margin-left: 24%;
+    }
+  }
+  @media only screen and (min-height: 1025px) {
+    .main {
+      background-image: none;
+      position: absolute;
+      min-height: initial;
+      overflow-x: hidden;
+    }
+    .menu-divider {
+      display: block;
+      width: 80%;
+      padding-bottom: 3em;
+      padding-top: 0.5em;
+      border-left: none;
+      border-bottom: none;
+      border-right: none;
+      border-color: beige;
+      overflow-x: hidden;
+    }
+    .container-buttons button{
+      width:initial;
+    }
+    .container-buttons{
+      width: 30%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    #map {
+    height: 20em;
+    width: 32%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: initial;
+    }
+    .text-block{
+    }
+    div {
+      display: block;
+    }
+    .menu-text {
+      display: none;
+    }
+    .active {
+      text-align: center;
+    }
+    .topnav a {
+      text-align: center;
+    }
+    ul li {
+      display: inline-table;
+      padding-left: 1.5em;
+      padding-right: 2em;
+      overflow-x: hidden;
+    }
+    ul {
+      display: block;
+      text-align: center;
+      font-size: 2em;
+      width: 100%;
+    }
+    .horizontal-menu-links {
+      color: beige;
+      display: block;
+    }
+    .horizontal-menu-links:hover {
+      color: rgb(218, 165, 67);
+    }
+    .footer {
+      width: 100%;
+      height: 13em;
+      overflow-x: hidden;
+    }
+    .row {
+      margin-left: 35%;
+      overflow-x: hidden;
+      
+    }
+    .text-block {
+      padding: 0;
+      margin: 0;
+    }
+    .text-block p {
+      font-size: 1em;
+    }
+  }
+
+  @media only screen and (min-width: 769px) {
+    .main {
+      background-image: none;
+      position: absolute;
+    }
+    .container-buttons button{
+      width:initial;
+    }
+    .menu-text {
+      display: none;
+    }
+    .active {
+      text-align: center;
+    }
+    .topnav a {
+      text-align: center;
+    }
+    div {
+      display: block;
+    }
+    .container-buttons button{
+      width:initial;
+    }
+    .container-buttons{
+      width: 30%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    #map {
+    height: 20em;
+    width: 32%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: initial;
+    }
+    ul li {
+      display: inline-table;
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+    ul {
+      display: block;
+      text-align: center;
+      font-size: 2em;
+      width: 100%;
+    }
+    .horizontal-menu-links {
+      color: beige;
+      display: block;
+    }
+    .horizontal-menu-links:hover {
+      color: rgb(218, 165, 67);
+    }
+    .text-block {
+      padding: 0;
+      margin: 0;
+    }
+    .text-block p {
+      font-size: 1em;
+    }
+    .row {
+      margin-left: 25%;
+    }
+  }
+  @media only screen and (min-width: 900px) {
+    .row {
+      margin-left: 28%;
+    }
+  }
+  @media only screen and (min-width: 1000px) {
+    .row {
+      margin-left: 30%;
+    }
+  }
+  @media only screen and (min-width: 1100px) {
+    .row {
+      margin-left: 32%;
+    }
+    ul li {
+      display: inline-table;
+      padding-left: 2em;
+      padding-right: 2em;
+    }
+  }
+  @media only screen and (min-width: 1200px) {
+    .row {
+      margin-left: 34%;
+    }
+  }
+  @media only screen and (min-width: 1300px) {
+    .row {
+      margin-left: 35%;
+    }
+  }
+  @media only screen and (min-width: 1400px) {
+    .row {
+      margin-left: 36%;
+    }
+  }
+  @media only screen and (min-width: 1500px) {
+    .row {
+      margin-left: 37%;
+    }
+  }
+  @media only screen and (min-width: 1600px) {
+    .row {
+      margin-left: 38%;
+    }
+  }
+  @media only screen and (min-width: 1700px) {
+    .row {
+      margin-left: 39%;
+    }
+  }
+  @media only screen and (min-width: 1800px) {
+    .row {
+      margin-left: 40%;
+    }
+  }
+  @media only screen and (min-width: 1900px) {
+    .row {
+      margin-left: 42%;
+    }
+  }
+</style>

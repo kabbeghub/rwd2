@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      function changeFont() {
+        currentFont = document.getElementById("wrapper").style.fontFamily;
+        console.log(currentFont);
+        if (currentFont == "temp") {
+          document.getElementById("wrapper").style.fontFamily =
+            "Impact,Charcoal,sans-serif";
+        } else {
+          document.getElementById("wrapper").style.fontFamily =
+            "Comic Sans MS, sans-serif";
+        }
+      }
+
+      function toggleDarkMode() {}
+
+      function toggleMobileNavBar() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+
+      function closeMobileNavBar() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        }
+        window.location.href="index.html";
+      }
+      function toggleGallery(){
+        window.location.href="gallery.html";
+      }
+
+      function toggleAbout(){
+        window.location.href="about.html";
+      }
+      function toggleContact(){
+        window.location.href="contact.html";
+      }
+      function initMap() {
+        const uluru = { lat: 55.60587, lng: 13.00073 };
+  
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 4,
+          center: uluru,
+        });
+        // The marker, positioned at Uluru
+        const marker = new google.maps.Marker({
+        position: uluru,
+        map: map,
+        });
+      }
+      function openContact() {
+        document.getElementById("contactForm").style.display = "block";
+        closeOrder();
+        closeInfo();
+      }
+
+      function closeContact() {
+        document.getElementById("contactForm").style.display = "none";
+      }
+
+      function openOrder() {
+        document.getElementById("orderForm").style.display = "block";
+        closeContact();
+        closeInfo();
+      }
+
+      function closeOrder() {
+        document.getElementById("orderForm").style.display = "none";
+      }
+
+      function openInfo() {
+        document.getElementById("infoForm").style.display = "block";
+        closeOrder();
+        closeContact();
+      }
+
+      function closeInfo() {
+        document.getElementById("infoForm").style.display = "none";
+      }
+
+      function mouselog(event) {
+        console.log(event.target);
+      }
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div
+          class="topnav"
+          id="parent-nav"
+          onmouseover="mouselog(event)"
+          onmouseout="mouselog(event)"
+        >
+          <a href="#contact" class="active" onClick="closeMobileNavBar()"
+            >Renewery</a
+          >
+          <div id="myLinks">
+            <a href="#gallery" onclick="toggleGallery()">Gallery</a>
+            <a href="#contact" onclick="toggleContact()">Contact</a>
+            <a href="#about" onclick="toggleAbout()">About</a>
+          </div>
+          <a
+            href="javascript:void(0);"
+            class="icon"
+            onclick="toggleMobileNavBar()"
+          >
+            <i class="fa fa-bars menu-text">Menu</i>
+          </a>
+        </div>
+      </header>
+      <main class="main">
+        <div
+          class="horizontal-menu"
+          id="horizontal-menu"
+          style="width: 100%"
+        >
+          <ul>
+            <li>
+              <a
+                href="#index"
+                id="homelink"
+                class="horizontal-menu-links"
+                onclick="closeMobileNavBar()"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                class="horizontal-menu-links"
+                href="#gallery"
+                onclick="toggleGallery()"
+                >Gallery</a
+              >
+            </li>
+            
+            <li>
+              <a
+                class="horizontal-menu-links"
+                href="#contact"
+                onclick="toggleContact()"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <a
+                class="horizontal-menu-links"
+                href="#about"
+                onclick="toggleAbout()"
+                >About</a
+              >
+            </li>
+          </ul>
+        </div>
+        <hr class="menu-divider" />
+        <div class="text-block">
+          <img
+          class="header-logo"
+          src="resources/logo_thin.png"
+          alt="logo"
+        />
+          </div>
+          <div class="container-buttons">
+            <div class="contact-form">
+              <button class="btn-contact" onclick="openContact()">Ask a Question?</button>
+              <div class="form-contact" id="contactForm">
+                <form action="/action_page.php" class="form-container">
+                  <h1>Ask us anything :)</h1>
+              
+                  <label for="email"><b>Email</b></label>
+                  <input type="text" placeholder="Enter Email" name="email" required>
+              
+                  <label for="name"><b>Name</b></label>
+                  <input type="name" placeholder="Enter name" name="name" required>
+                  
+                  <label class="label-question2"for="question"><b>Question?</b></label>
+                  <textarea class="label-question" rows="4" cols="45" name="question" required>What would you like to know?</textarea>
+
+                  
+                  <button type="submit" class="btn-send">Send</button>
+                  <button type="button" class="btn-cancel" onclick="closeContact()">Close form</button>
+                </form>
+              </div>
+            </div>
+            <div class="order-form">
+              <button class="btn-order" onclick="openOrder()">Free consultation</button>
+              <div class="form-order" id="orderForm">
+                <form action="/action_page.php" class="form-container">
+                  <h1>Submit for appraisal</h1>
+              
+                  <label for="email"><b>Email</b></label>
+                  <input type="text" placeholder="Enter Email" name="email" required>
+              
+                  <label for="name"><b>Name</b></label>
+                  <input type="name" placeholder="Enter name" name="name" required>
+                  
+                  <label class="label-question2" for="item" style="display:block"><b>Item description</b></label>
+                  <textarea class="label-question" type="text" rows="6" cols="45" name="question" required>Describe item and attach pictures.</textarea>
+
+                  <button type="submit" class="btn-send">Send</button>
+                  <button type="button" class="btn-cancel" onclick="closeOrder()">Close form</button>
+                </form>
+              </div>
+            </div>
+            <div class="general-information">
+              <button class="btn-info" onclick="openInfo()">General information</button>
+              <div class="infoForm" id="infoForm">
+                <hr>
+                <p>
+                  Address: <b>Somewherestreet 21, Malmö City</b>
+                </p>
+                <p>
+                  Phonenumber: <b>555-123-4567</b>
+                </p>
+                <p>
+                  Fax: <b>098-234-65 18</b>
+                </p>
+                <p>
+                  Email: <b>Renewery@revolution.se</b>
+                </p>
+                <hr>
+                <div class="container-workers">
+                  <div class="left">
+
+                  </div>
+                  <div class="right">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="map"></div>
+          <footer class="footer" id="footer">
+            <p class="social-media-title">
+              Don't forget to check out our social Media!
+            </p>
+            <div class="row">
+              <div class="column">
+                <a href="https://www.facebook.com">
+                  <img src="resources/fbfall2.png" alt="fb" style="width: 100%" />
+                </a>
+              </div>
+              <div class="column">
+                <a href="https://www.instagram.com">
+                  <img src="resources/igfall.png" alt="ig" style="width: 100%" />
+                </a>
+              </div>
+              <div class="column">
+                <a href="https://www.twitter.com">
+                  <img src="resources/twfall.png" alt="tw" style="width: 100%" />
+                </a>
+              </div>
+            </div>
+            <p class="footer-text-left">www.Renewery.se</p>
+            <p class="footer-text-right">Copyright © 2021 Renewery</p>
+          </footer>
+    </div>
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=&v=weekly"
+    async
+  ></script>
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
+  .wrapper {
+    padding: 0;
+    margin: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  .main {
+    min-width: 100%;
+    min-height: 100%;
+    padding-bottom: 10em;
+  }
+  .header {
+    min-width: 100%;
+    min-height: 100%;
+  }
+  .topnav {
+    background-color: rgb(212, 182, 182);
+    position: relative;
+  }
+
+  .topnav #myLinks {
+    display: none;
+  }
+  .form-contact{
+    display:none;
+  }
+  .form-order{
+    display:none;
+  }
+  .infoForm{
+    display:none;
+  }
+  .form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+hr { 
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+  width:50%;
+  border-color:beige;
+} 
+
+/* Add styles to the form container */
+.form-contact {
+  max-width: 90%;
+  padding: 10px;
+  background-color: white;
+  overflow-x: hidden;
+}
+.btn-info{
+  margin-bottom: 4em;
+}
+.form-order {
+  max-width: 90%;
+  padding: 10px;
+  background-color: white;
+  overflow-x: hidden;
+}
+.general-information p {
+  color: rgb(212, 207, 184);
+  text-align: center;
+}
+/* Full-width input fields */
+.form-contact input[type=text], .form-container input[type=name] {
+  width: 90%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+.label-question{
+  width: 90%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+.form-contact textarea[type=text], .form-container textarea[type=question] {
+  width: 90%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+.form-order input[type=text], .form-container input[type=name] {
+  width: 90%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=name]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+.form-container textarea[type=text]:focus, .form-container textarea[type=question]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-order input[type=name]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+/* Set a style for the submit/login button */
+.form-container .btn-send {
+  background-color: #67e9b9;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .btn-cancel {
+  background-color: rgb(231, 130, 130);
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add some hover effects to buttons */
+.form-contact .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+  .topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 2em;
+    display: block;
+    text-align: left;
+  }
+
+  .topnav a.icon {
+    display: block;
+    position: absolute;
+    content: "hi";
+    right: 0;
+    top: 0;
+    height: 1.15em;
+    width: 2em;
+  }
+
+  .topnav a:hover {
+    background-color: rgb(219, 173, 173);
+    color: rgb(211, 199, 199);
+  }
+
+  .active {
+    background-color: #d6d8c3;
+    color: white;
+    font-size: 3em;
+  }
+
+  .btn-contact {
+    background-color: #d6d8c3;
+  }
+  .container-buttons{
+    width: 100%;
+  }
+  .btn-order{
+    margin:1em 1em 1em 0;
+  }
+  .container-buttons button {
+    text-align: center;
+    border:none;
+    width:40%;
+    padding:0.5em;
+    border-radius: 0.2em;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    background-color: #d6d8c3;
+  }
+  .header-logo {
+    height: 4em;
+    padding: 1em 0 1em 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  .general-information{
+    padding-bottom: 4em;
+  }
+  
+    .text-block {
+      top: 3em;
+      right: 1em;
+      color: #cfcac6;
+      text-align: center;
+      margin: 1em;
+    }
+    #map {
+      height: 20em;
+      width: 100%;
+      margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 5em;
+    }
+  .row {
+    min-width: 100%;
+    display: inline-block;
+    margin-left: 20%;
+  }
+  .column {
+    float: left;
+    text-align: center;
+    max-width: 15%;
+    padding: 10px;
+    padding-bottom: 1px;
+  }
+  .social-media-title {
+    padding: 0;
+    padding-top: 0.2em;
+    margin: 0;
+    text-align: center;
+    color: rgb(241, 241, 241);
+  }
+  .footer-text-left {
+    margin: 0;
+    padding: 0;
+    padding-top: 0;
+    padding-left: 0.4em;
+    width: 40%;
+    display: inline-block;
+  }
+  .footer-text-right {
+    margin: 0;
+    padding: 0;
+    float: right;
+    display: inline-block;
+  }
+
+  .footer {
+    background-color: #d6d8c3;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+    color: rgb(241, 241, 241);
+    z-index: 2;
+  }
+
+  @media only screen and (min-height: 750px) {
+    .footer {
+      position: fixed;
+    }
+    .main{
+      padding-bottom:15em;
+    }
+  }
+  ul{
+      display: none;
+    }
+    .menu-divider{display:none;
+    }
+
+  @media only screen and (min-height: 750px) and (min-width:400px) {
+    .footer {
+      position: fixed;
+    }
+    .main{
+      padding-bottom: 13em;
+    }
+    .read-more-paragraph{
+      padding-left: 14%;
+    }
+  }
+  @media only screen and (min-height: 750px) {
+    .footer {
+      position: fixed;
+    }
+  }
+  @media only screen and (min-height: 750px) and (min-width: 600px) {
+    .text-block h2 {
+      font-size: 2em;
+    }
+    
+    .text-block p {
+      font-size: 1em;
+      padding: 0 7em 2em 7em;
+    }
+    .footer {
+      height: 12em;
+    }
+    .row {
+      margin-left: 24%;
+    }
+  }
+  @media only screen and (min-height: 1025px) {
+    .main {
+      background-image: none;
+      position: absolute;
+      min-height: initial;
+      overflow-x: hidden;
+    }
+    .menu-divider {
+      display: block;
+      width: 80%;
+      padding-bottom: 3em;
+      padding-top: 0.5em;
+      border-left: none;
+      border-bottom: none;
+      border-right: none;
+      border-color: beige;
+      overflow-x: hidden;
+    }
+    .container-buttons button{
+      width:initial;
+    }
+    .container-buttons{
+      width: 30%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    #map {
+    height: 20em;
+    width: 32%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: initial;
+    }
+    .text-block{
+    }
+    div {
+      display: block;
+    }
+    .menu-text {
+      display: none;
+    }
+    .active {
+      text-align: center;
+    }
+    .topnav a {
+      text-align: center;
+    }
+    .text-block h2 {
+      display: none;
+    }
+    ul li {
+      display: inline-table;
+      padding-left: 1.5em;
+      padding-right: 2em;
+      overflow-x: hidden;
+    }
+    ul {
+      display: block;
+      text-align: center;
+      font-size: 2em;
+      width: 100%;
+    }
+    .horizontal-menu-links {
+      color: beige;
+      display: block;
+    }
+    .horizontal-menu-links:hover {
+      color: rgb(218, 165, 67);
+    }
+    .footer {
+      width: 100%;
+      height: 13em;
+      overflow-x: hidden;
+    }
+    .row {
+      margin-left: 35%;
+      overflow-x: hidden;
+      
+    }
+    .text-block {
+      padding: 0;
+      margin: 0;
+    }
+    .text-block p {
+      font-size: 1em;
+    }
+  }
+
+  @media only screen and (min-width: 769px) {
+    .main {
+      background-image: none;
+      position: absolute;
+    }
+    .container-buttons button{
+      width:initial;
+    }
+    .menu-text {
+      display: none;
+    }
+    .active {
+      text-align: center;
+    }
+    .topnav a {
+      text-align: center;
+    }
+    div {
+      display: block;
+    }
+    .container-buttons button{
+      width:initial;
+    }
+    .container-buttons{
+      width: 30%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    #map {
+    height: 20em;
+    width: 32%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: initial;
+    }
+    .text-block h2 {
+      display: none;
+    }
+    ul li {
+      display: inline-table;
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+    ul {
+      display: block;
+      text-align: center;
+      font-size: 2em;
+      width: 100%;
+    }
+    .horizontal-menu-links {
+      color: beige;
+      display: block;
+    }
+    .horizontal-menu-links:hover {
+      color: rgb(218, 165, 67);
+    }
+    .text-block {
+      padding: 0;
+      margin: 0;
+    }
+    .text-block p {
+      font-size: 1em;
+    }
+    .row {
+      margin-left: 25%;
+    }
+  }
+  @media only screen and (min-width: 900px) {
+    .row {
+      margin-left: 28%;
+    }
+  }
+  @media only screen and (min-width: 1000px) {
+    .row {
+      margin-left: 30%;
+    }
+  }
+  @media only screen and (min-width: 1100px) {
+    .row {
+      margin-left: 32%;
+    }
+    ul li {
+      display: inline-table;
+      padding-left: 2em;
+      padding-right: 2em;
+    }
+  }
+  @media only screen and (min-width: 1200px) {
+    .row {
+      margin-left: 34%;
+    }
+  }
+  @media only screen and (min-width: 1300px) {
+    .row {
+      margin-left: 35%;
+    }
+  }
+  @media only screen and (min-width: 1400px) {
+    .row {
+      margin-left: 36%;
+    }
+  }
+  @media only screen and (min-width: 1500px) {
+    .row {
+      margin-left: 37%;
+    }
+  }
+  @media only screen and (min-width: 1600px) {
+    .row {
+      margin-left: 38%;
+    }
+  }
+  @media only screen and (min-width: 1700px) {
+    .row {
+      margin-left: 39%;
+    }
+  }
+  @media only screen and (min-width: 1800px) {
+    .row {
+      margin-left: 40%;
+    }
+  }
+  @media only screen and (min-width: 1900px) {
+    .row {
+      margin-left: 42%;
+    }
+  }
+</style>
