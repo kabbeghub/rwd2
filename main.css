@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+body {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 15% auto 12%;
+  grid-template-areas:
+    "hd"
+    "main"
+    "footer";
+}
+.row {
+  min-width: 100%;
+  display: flex;
+}
+.navigation-list {
+  display: flex;
+}
+.column {
+  max-width: 4%;
+}
+.footer {
+  background-color: #d6d8c3;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+  height: 8em;
+  color: rgb(241, 241, 241);
+  z-index: 2;
+}
